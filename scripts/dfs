@@ -33,10 +33,10 @@ NARROW_MODE=1
 WEB_OUTPUT=1
 ;;
 --type=*)
-DF_OPTIONS+=" $1"
+DF_OPTIONS=$DF_OPTIONS" $1"
 ;;
 --exclude-type=*)
-DF_OPTIONS+=" $1"
+DF_OPTIONS=$DF_OPTIONS" $1"
 ;;
 * )
 echo $USAGE
@@ -66,7 +66,7 @@ AWK_COMMAND="/usr/bin/env gawk"
 esac
 
 # Add additional df options
-DF_COMMAND+=$DF_OPTIONS
+DF_COMMAND=$DF_COMMAND$DF_OPTIONS
 
 # -------------------------------------------------------------------------
 #   Grabbing "df" result
